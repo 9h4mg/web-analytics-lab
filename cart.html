@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Cart | Surveillance Socks Co.</title>
+<link rel="stylesheet" href="style.css">
+<script src="analytics.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="index.html">Surveillance <span>Socks</span> Co.</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product-a.html">Everyday Crew</a>
+      <a href="product-b.html">Merino Hiker</a>
+      <a class="cartlink" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <h2>Your cart</h2>
+  <p class="sub">Leaving this page without continuing is a cart abandonment, and it is recorded as one.</p>
+  <div id="cart-area"></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    Surveillance Socks Co. is a fictional store built as a test site for<br>
+    48436 Digital Forensics, University of Technology Sydney. Nothing here is for sale.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var items = readCart();
+  var area = document.getElementById("cart-area");
+
+  if (!items.length) {
+    area.innerHTML =
+      '<div class="empty"><p>Your cart is empty.</p>' +
+      '<a class="btn" href="index.html">Back to the shop</a></div>';
+    return;
+  }
+
+  var rows = "";
+  items.forEach(function (i) {
+    rows += "<tr><td>" + i.name + "</td><td>" + i.id + "</td><td class='r'>" + i.qty +
+            "</td><td class='r'>$" + i.price.toFixed(2) +
+            "</td><td class='r'>$" + (i.price * i.qty).toFixed(2) + "</td></tr>";
+  });
+
+  area.innerHTML =
+    '<table class="t"><thead><tr><th>Item</th><th>SKU</th><th class="r">Qty</th>' +
+    '<th class="r">Price</th><th class="r">Subtotal</th></tr></thead><tbody>' + rows +
+    '<tr><td colspan="4" class="r"><strong>Total</strong></td><td class="r"><strong>$' +
+    cartTotal().toFixed(2) + '</strong></td></tr></tbody></table>' +
+    '<p><a class="btn" href="checkout.html" onclick="trackBeginCheckout()">Proceed to checkout</a> ' +
+    '<a class="btn ghost" href="index.html">Keep shopping</a></p>';
+})();
+</script>
+</body>
+</html>

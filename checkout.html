@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout | Surveillance Socks Co.</title>
+<link rel="stylesheet" href="style.css">
+<script src="analytics.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="index.html">Surveillance <span>Socks</span> Co.</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product-a.html">Everyday Crew</a>
+      <a href="product-b.html">Merino Hiker</a>
+      <a class="cartlink" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <h2>Checkout</h2>
+  <p class="sub">Order total: <strong id="co-total">$0.00</strong></p>
+
+  <form class="co" onsubmit="return completePurchase(event)">
+    <label for="name">Full name</label>
+    <input id="name" type="text" placeholder="Jane Citizen" required>
+
+    <label for="email">Email</label>
+    <input id="email" type="email" placeholder="jane@example.com" required>
+
+    <label for="addr">Delivery address</label>
+    <input id="addr" type="text" placeholder="1 Broadway, Ultimo NSW 2007" required>
+
+    <label for="card">Card number</label>
+    <input id="card" type="text" placeholder="4111 1111 1111 1111" required>
+
+    <p style="margin-top:20px">
+      <button class="btn wide" type="submit">Place order</button>
+    </p>
+
+    <p class="note">
+      This form does not submit anywhere and no data leaves your browser. It exists so the
+      checkout step produces a page view and a purchase event that analytics platforms can record.
+      Do not enter real personal or payment details.
+    </p>
+  </form>
+</div>
+
+<footer>
+  <div class="wrap">
+    Surveillance Socks Co. is a fictional store built as a test site for<br>
+    48436 Digital Forensics, University of Technology Sydney. Nothing here is for sale.
+  </div>
+</footer>
+
+<script>
+document.getElementById("co-total").textContent = "$" + cartTotal().toFixed(2);
+</script>
+</body>
+</html>

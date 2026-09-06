@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Order Confirmed | Surveillance Socks Co.</title>
+<link rel="stylesheet" href="style.css">
+<script src="analytics.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="index.html">Surveillance <span>Socks</span> Co.</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product-a.html">Everyday Crew</a>
+      <a href="product-b.html">Merino Hiker</a>
+      <a class="cartlink" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="done">
+    <div class="tick">&#9989;</div>
+    <h1>Thank you for your order</h1>
+    <p class="sub">Order reference <strong id="order-ref">TEST-000000</strong></p>
+    <p>No socks will be dispatched. A purchase event has been sent to every analytics
+       platform configured on this site, which was the actual goal.</p>
+    <p><a class="btn" href="index.html">Back to the shop</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    Surveillance Socks Co. is a fictional store built as a test site for<br>
+    48436 Digital Forensics, University of Technology Sydney. Nothing here is for sale.
+  </div>
+</footer>
+
+<script>
+try {
+  var ref = localStorage.getItem("lastOrder");
+  if (ref) document.getElementById("order-ref").textContent = ref;
+} catch (e) {}
+</script>
+</body>
+</html>
