@@ -2,7 +2,7 @@
 
 Test website for **48436 Digital Forensics, Assignment Part 2 (Web Analytics)**.
 A fictional two-product shop, built so that a single visit can be followed from the
-browser's cookie store, through the network request, to the analytics server's record.
+browser's cookie store, through the network request, to the analytics server's record .
 
 ## Files
 
