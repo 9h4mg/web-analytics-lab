@@ -9,7 +9,7 @@
 
 var GA4_MEASUREMENT_ID = "G-MYGZ36PQS2";        // e.g. "G-XXXXXXXXXX"   (Google Analytics 4)
 var CLARITY_PROJECT_ID = "ye0soh2bta";        // e.g. "abcdefghij"     (Microsoft Clarity)
-var MATOMO_URL         = "";        // e.g. "http://192.168.1.50:8080/"
+var MATOMO_URL         = "http://192.168.0.36:8080/";        // VM, bridged
 var MATOMO_SITE_ID     = "1";       // Matomo site ID, usually 1
 
 /* ------------------------------------------------------------
